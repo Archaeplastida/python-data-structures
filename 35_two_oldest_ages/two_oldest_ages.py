@@ -13,6 +13,16 @@ def two_oldest_ages(ages):
         >>> two_oldest_ages([1, 5, 5, 2])
         (2, 5)
     """
+    oldest = 0
+    second_oldest = 0
+
+    for x in ages:
+        if x > oldest:
+            second_oldest = oldest
+            oldest = x
+        elif x > second_oldest and x < oldest:
+            second_oldest = x
+    return (second_oldest, oldest)
 
     # NOTE: don't worry about an optimized runtime here; it's fine if
     # you have a runtime worse than O(n)

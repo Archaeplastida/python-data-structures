@@ -11,3 +11,10 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    value = None
+    highest_count = 0
+    for x in nums:
+        if nums.count(x) > highest_count:
+            highest_count = nums.count(x)
+            value = x
+    return value

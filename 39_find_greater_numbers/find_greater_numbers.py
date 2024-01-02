@@ -19,3 +19,11 @@ def find_greater_numbers(nums):
         >>> find_greater_numbers([])
         0
     """
+    followed_by_amt = 0
+    ind = 1
+    for x in nums:
+        for y in nums[ind:]:
+            if y > x:
+                followed_by_amt += 1
+        ind += 1
+    return followed_by_amt
